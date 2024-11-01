@@ -1,0 +1,38 @@
+.header {
+  padding: 0.3rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: end;
+  background-color: var(--hue-color-near-white);
+
+  &__breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-right: auto;
+  }
+
+  &__breadcrumb {
+    font-size: 0.8rem;
+    color: var(--hue-color-dark);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__breadcrumb:not(:first-child)::before {
+    content: '>';
+    margin-right: 0.5rem;
+    text-decoration: none !important;
+    display: inline-block;
+  }
+
+  &__config-property {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
+}

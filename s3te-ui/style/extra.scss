@@ -1,0 +1,27 @@
+.extra {
+  &__content {
+    padding: 1.0rem;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+      "scala-docs-title tabs"
+      "actions          tabs";
+    grid-column-gap: 1rem;
+  }
+
+  &__scala-docs-title {
+    grid-area: scala-docs-title;
+    align-self: end;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  &__actions {
+    grid-area: actions;
+  }
+
+  &__tabs {
+    grid-area: tabs;
+  }
+}

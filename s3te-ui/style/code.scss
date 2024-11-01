@@ -1,0 +1,49 @@
+.code {
+  white-space: pre;
+  line-height: 2.0;
+  font-family: monospace;
+  font-size: 0.9rem;
+
+  &__partial {
+    position: relative;
+    font-weight: bold;
+    color: var(--hue-color-dark);
+
+
+    &--is-empty {
+      color: var(--hue-color-de-emphasis);
+      font-weight: normal;
+    }
+
+    &--highlight {
+      background-color: #ffff00;
+    }
+  }
+
+  &__border {
+    position: absolute;
+    width: 0.3em;
+    top: -0.3em;
+    bottom: -0.3em;
+
+    &--start#{&}--highlight {
+      border: 2px solid firebrick;
+      border-right: 0px;
+      left: -0.3em;
+    }
+
+    &--end#{&}--highlight {
+      border: 2px solid firebrick;
+      border-left: 0px;
+      right: -0.3em;
+    }
+
+    &--start#{&}--highlight#{&}--zero-width {
+      left: 0;
+    }
+
+    &--end#{&}--highlight#{&}--zero-width {
+      right: 0;
+    }
+  }
+}

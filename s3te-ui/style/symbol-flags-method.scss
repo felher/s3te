@@ -1,0 +1,33 @@
+.symbol-flags-method {
+  &__table {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  &__flag,
+  &__docs,
+  &__header-cell {
+    padding: 0.1rem 0.5rem;
+  }
+
+  &__flag,
+  &__header-cell:first-child {
+    border-right: 1px solid var(--hue-color-dark);
+  }
+
+  &__header-cell {
+    border-bottom: 1px solid var(--hue-color-dark);
+    font-weight: bold;
+    color: var(--hue-color-dark);
+
+    &:first-child {
+      text-align: right;
+    }
+  }
+
+  &__flag {
+    text-align: right;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+}

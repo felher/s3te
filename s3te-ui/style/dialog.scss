@@ -1,0 +1,82 @@
+.dialog {
+  position: absolute;
+  pointer-events: auto;
+  background-color: var(--hue-color-near-white);
+  border: 1px solid var(--hue-color-near-white);
+
+  display: grid;
+  grid-template-columns: 5px minmax(0, 1fr) 5px;
+  grid-template-rows: auto minmax(0, 1fr) 5px;
+  grid-template-areas:
+    "header    header   header"
+    "resize-w  content  resize-e"
+    "resize-sw resize-s resize-se";
+
+  &__header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1.5rem minmax(0, 1fr) 1rem 0.5rem;
+    grid-template-areas: ". title close .";
+    color: var(--hue-color-near-white);
+    background-color: var(--hue-color-dark);
+    align-items: center;
+    user-select: none;
+    cursor: move;
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &__close {
+    grid-area: close;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background-image: url("/assets/close.svg?inline");
+    background-size: contain;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+
+  &__resize-w {
+    grid-area: resize-w;
+    cursor: ew-resize;
+    border-left: 1px solid var(--hue-color-dark);
+    user-select: none;
+  }
+
+  &__resize-e {
+    grid-area: resize-e;
+    cursor: ew-resize;
+    border-right: 1px solid var(--hue-color-dark);
+    user-select: none;
+  }
+
+  &__resize-s {
+    grid-area: resize-s;
+    cursor: s-resize;
+    border-bottom: 1px solid var(--hue-color-dark);
+    user-select: none;
+  }
+
+  &__resize-sw {
+    grid-area: resize-sw;
+    cursor: sw-resize;
+    border-bottom: 1px solid var(--hue-color-dark);
+    border-left: 1px solid var(--hue-color-dark);
+    user-select: none;
+  }
+
+  &__resize-se {
+    grid-area: resize-se;
+    cursor: se-resize;
+    border-bottom: 1px solid var(--hue-color-dark);
+    border-right: 1px solid var(--hue-color-dark);
+    user-select: none;
+  }
+}

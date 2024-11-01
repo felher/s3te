@@ -1,0 +1,48 @@
+.app {
+  height: 100%;
+  display: grid;
+  grid-template-columns: var(--code-size) auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow: none;
+  background-color: var(--hue-color-near-white);
+  column-gap: 0.3rem;
+
+  &__header {
+    grid-column: span 3;
+  }
+
+  &__tree,
+  &__code {
+    border-top: 1px solid #e0e0e0;
+    overflow: auto;
+    padding: 1rem;
+    background-color: white;
+  }
+
+  &__tree {
+    border-right: 1px solid #e0e0e0;
+  }
+
+  &__code {
+    border-left: 1px solid #e0e0e0;
+  }
+
+  &__handle-bar {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    height: 3rem;
+    width: 1rem;
+    align-self: center;
+    user-select: none;
+    cursor: ew-resize;
+
+    display: grid;
+    grid-template-columns: repeat(2, 20%);
+    justify-content: space-between;
+    padding: 30%;
+  }
+
+  &__handle-bar-handle {
+    background-color: #e0e0e0;
+  }
+}

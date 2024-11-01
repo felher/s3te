@@ -1,0 +1,22 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --floats-z-index: 200;
+  --dialogs-z-index: 100;
+
+  --main-hue: 200;
+  --hue-color-near-white: oklch(98% 0.012 var(--main-hue));
+  --hue-color-dark: oklch(31.16% 0.0527 var(--main-hue));
+  --hue-color-de-emphasis: oklch(51.16% 0.0527 var(--main-hue));
+
+  --code-size: 66vw;
+}

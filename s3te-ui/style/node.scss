@@ -1,0 +1,141 @@
+.node {
+  display: grid;
+  grid-template-columns: auto 0.3rem auto auto 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: start;
+  justify-content: start;
+  align-items: center;
+
+  grid-template-areas:
+    "expander name          name          actions       opening-paren"
+    ".        indent        children      children      children"
+    ".        closing-paren closing-paren closing-paren closing-paren";
+
+  &--is-collapsed {
+    display: flex;
+  }
+
+  &--highlight {
+    background-color: yellow;
+  }
+
+  &__expander {
+    grid-area: expander;
+    align-self: center;
+
+    &--hide {
+      display: none !important;
+    }
+  }
+
+  &__name {
+    grid-area: name;
+
+    &--root-type-Tree {
+      color: oklch(61.28% 0.191 253.59)
+    }
+
+    &--root-type-Selector {
+      color: oklch(61.28% 0.191 145.05)
+    }
+
+    &--root-type-Constant {
+      color: oklch(61.28% 0.191 360)
+    }
+
+    &--root-type-ParamClause {
+      color: oklch(61.28% 0.191 40.23)
+    }
+
+    &--no-colors {
+      color: black;
+    }
+  }
+
+  &__actions {
+    grid-area: actions;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0.2rem;
+    opacity: 0.5;
+
+    >img {
+      width: 1.0em;
+      cursor: pointer;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__action-drill {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background-image: url("/assets/tree.svg?inline");
+    background-size: contain;
+
+  }
+
+  &__action-info {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background-image: url("/assets/info.svg?inline");
+    background-size: contain;
+  }
+
+  &__opening-paren {
+    grid-area: opening-paren;
+  }
+
+  &__indent {
+    grid-area: indent;
+    width: 2px;
+    background-color: black;
+    opacity: 0.1;
+    justify-self: center;
+    height: 100%;
+
+    &--is-collapsed {
+      visibility: hidden;
+    }
+  }
+
+  &__children {
+    grid-area: children;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    column-gap: 0.3rem;
+    padding-left: 1rem;
+
+    &--is-collapsed {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+    }
+
+    &--no-params {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__param-name {
+    font-variant: small-caps;
+    color: #666;
+    text-align: right;
+    white-space: nowrap;
+    user-select: none;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__closing-paren {
+    grid-area: closing-paren;
+  }
+}
