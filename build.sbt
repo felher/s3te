@@ -1,4 +1,4 @@
-lazy val sv      = "3.5.2"
+lazy val sv      = "3.3.4"
 lazy val svMinor = sv.split('.').drop(1).head
 
 ThisBuild / organization         := "org.felher"
