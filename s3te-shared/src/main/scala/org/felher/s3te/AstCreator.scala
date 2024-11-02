@@ -126,8 +126,6 @@ private class AstCreator[Q <: Quotes & Singleton](using val quotes: Q):
         node(ReflectionType.MatchCase, c(pat), c(rhs))
       case AndType(left, right)                     =>
         node(ReflectionType.AndType, c(left), c(right))
-      case FlexibleType(tp)                         =>
-        node(ReflectionType.FlexibleType, c(tp))
       case ByNameType(underlying)                   =>
         node(ReflectionType.ByNameType, c(underlying))
       case ParamRef(binder, idx)                    =>
